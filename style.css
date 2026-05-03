@@ -1,0 +1,143 @@
+/* 1. CONFIGURACIÓN GENERAL */
+:root {
+    --primary: #6366f1;       /* Un violeta moderno */
+    --primary-hover: #4f46e5;
+    --bg: #f8fafc;            /* Fondo gris muy clarito */
+    --text: #1e293b;          /* Texto casi negro */
+    --white: #ffffff;
+    --danger: #ef4444;        /* Rojo para borrar */
+    --success: #22c55e;       /* Verde para completar */
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+/* 2. EL CONTENEDOR PRINCIPAL */
+.container {
+    background: var(--white);
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--primary);
+}
+
+/* 3. EL FORMULARIO DE AGREGAR */
+.todo-header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary);
+}
+
+button[type="submit"] {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-hover);
+}
+
+/* 4. LA LISTA DE TAREAS */
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: var(--bg);
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Tareas completadas */
+.completed {
+    opacity: 0.6;
+}
+
+.completed .task-text {
+    text-decoration: line-through;
+    color: #64748b;
+}
+
+/* 5. BOTONES DE ACCIÓN */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-complete, .btn-delete {
+    text-decoration: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-complete {
+    background-color: #dcfce7;
+    color: var(--success);
+}
+
+.btn-complete:hover {
+    background-color: var(--success);
+    color: white;
+}
+
+.btn-delete {
+    background-color: #fee2e2;
+    color: var(--danger);
+}
+
+.btn-delete:hover {
+    background-color: var(--danger);
+    color: white;
+}
